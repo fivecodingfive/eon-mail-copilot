@@ -1,4 +1,4 @@
-# E.ON Mail Copilot - Local LLM assistant for analyzing and drafting customer emails.**
+# E.ON Mail Copilot - Local LLM assistant for analyzing and drafting customer emails
 
 This repository implements a initial proof-of-concept for semi-automated email handling at **E.ON**.  
 The goal is to support Customer Agents (CAs) by analyzing incoming messages, generating draft replies, and providing stylistic variations — while the CA remains in control of the final answer.
