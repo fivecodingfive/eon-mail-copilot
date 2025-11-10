@@ -1,0 +1,3 @@
+# Local datasets (keep folder, ignore contents)
+data/golden_dataset/*.txt
+

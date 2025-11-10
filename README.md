@@ -15,3 +15,17 @@ We use [Ollama](https://ollama.com) with **Llama 3.2 3B Instruct**, which runs e
 ollama pull llama3.2
 # 3. Test the model
 ollama run llama3.2
+
+
+## 📂 Data Setup
+The project uses a set of anonymized customer emails for local experimentation. These files shuold not be pushed to GitHub and need to be copied by each team member. 
+To do so, just copy all .txt files provided by E.ON and paste them into the respective folder in the project (/data/golden_dataset)
+
+At the end, you want to have a structure like this: 
+eon-mail-copilot/
+│
+├── data/
+│   └── golden_dataset/
+│       └── 1.tx
+│       └── 2.tx
+│       └── ...
