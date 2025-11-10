@@ -15,6 +15,7 @@ We use [Ollama](https://ollama.com) with **Llama 3.2 3B Instruct**, which runs e
 ollama pull llama3.2
 # 3. Test the model
 ollama run llama3.2
+```
 
 
 ## 📂 Data Setup
