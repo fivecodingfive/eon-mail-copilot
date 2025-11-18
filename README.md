@@ -22,11 +22,16 @@ ollama run llama3.2
 The project uses a set of anonymized customer emails for local experimentation. These files shuold not be pushed to GitHub and need to be copied by each team member. 
 To do so, just copy all .txt files provided by E.ON and paste them into the respective folder in the project (/data/golden_dataset)
 
-At the end, you want to have a structure like this: 
-eon-mail-copilot/
-│
-├── data/
-│   └── golden_dataset/
-│       └── 1.tx
-│       └── 2.tx
-│       └── ...
+
+## 📦 Dependencies
+Install the required Python packages:
+
+Windows (PowerShell/Command Prompt):
+```bash
+pip install -r requirements.txt
+```
+
+macOS/Linux:
+```bash
+pip3 install -r requirements.txt
+```
