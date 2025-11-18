@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-BASE = Path(__file__).parent.parent.parent
+BASE = Path(__file__).parent.parent
 STATE_FILE = BASE / "data" / "current_mail.txt"
 
 def set_current_email():

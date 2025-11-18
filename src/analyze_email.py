@@ -1,17 +1,17 @@
 import ollama
 from pathlib import Path
-from src.helper import utils
+import helper
 import json
 import re   
 
-BASE = Path(__file__).parent.parent.parent
+BASE = Path(__file__).parent.parent
 
 def analyze_mail():
     # load prompts
-    system_prompt_path = BASE / "prompts" / "1_system" / "base_system.md"
+    system_prompt_path = BASE / "prompts" / "1_base_system.md"
     system_prompt = system_prompt_path.read_text(encoding="utf-8")
 
-    analyze_prompt_path = BASE / "prompts" / "2_analyze" / "topic_classification.md"
+    analyze_prompt_path = BASE / "prompts" / "2_topic_classification.md"
     analyze_prompt = analyze_prompt_path.read_text(encoding="utf-8")
 
     combined_prompt = (
@@ -22,8 +22,8 @@ def analyze_mail():
 
       
     # Construct final prompt
-    utils.set_current_email()
-    email_text = utils.load_email()
+    helper.set_current_email()
+    email_text = helper.load_email()
     final_prompt = combined_prompt.replace("{{EMAIL}}",email_text)
 
     # Run LLM
@@ -53,14 +53,3 @@ def analyze_mail():
     except json.JSONDecodeError as e:
         print(f"Failed to decode extracted JSON: {e}")
         return None
-
-
-
-if __name__ == "__main__":
-    # This block only runs if you execute THIS file directly (python process_llm.py)
-    classification = generate_and_get_topic()
-    if classification:
-        print("\n--- Direct Run Result ---")
-        print(f"Original mail: {utils.load_email()}")
-        print(f"Topic: {classification['topic']}")
-        print(f"Summary: {classification['short_summary']}")
